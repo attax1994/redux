@@ -1,7 +1,16 @@
 {
   "name": "redux",
-  "version": "4.0.0-rc.1",
+  "version": "4.0.0",
   "description": "Predictable state container for JavaScript apps",
+  "license": "MIT",
+  "homepage": "http://redux.js.org",
+  "repository": "github:reduxjs/redux",
+  "bugs": "https://github.com/reduxjs/redux/issues",
+  "keywords": ["redux","reducer","state","predictable","functional","immutable","hot","live","replay","flux","elm"],
+  "authors": [
+    "Dan Abramov <dan.abramov@me.com> (https://github.com/gaearon)",
+    "Andrew Clark <acdlite@me.com> (https://github.com/acdlite)"
+  ],
   "main": "lib/redux.js",
   "module": "es/redux.js",
   "typings": "./index.d.ts",
@@ -30,32 +39,6 @@
     "examples:lint": "eslint examples",
     "examples:test": "cross-env CI=true babel-node examples/testAll.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/reactjs/redux.git"
-  },
-  "keywords": [
-    "redux",
-    "reducer",
-    "state",
-    "predictable",
-    "functional",
-    "immutable",
-    "hot",
-    "live",
-    "replay",
-    "flux",
-    "elm"
-  ],
-  "authors": [
-    "Dan Abramov <dan.abramov@me.com> (https://github.com/gaearon)",
-    "Andrew Clark <acdlite@me.com> (https://github.com/acdlite)"
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/reactjs/redux/issues"
-  },
-  "homepage": "http://redux.js.org",
   "dependencies": {
     "loose-envify": "^1.1.0",
     "symbol-observable": "^1.2.0"
@@ -63,7 +46,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
-    "babel-eslint": "^8.2.2",
+    "babel-eslint": "^8.2.3",
     "babel-jest": "^22.4.3",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
@@ -72,20 +55,20 @@
     "cross-env": "^5.1.4",
     "eslint": "^4.19.1",
     "eslint-config-react-app": "^2.1.0",
-    "eslint-plugin-flowtype": "^2.46.1",
-    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-flowtype": "^2.46.2",
+    "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
     "glob": "^7.1.1",
     "jest": "^22.4.3",
-    "prettier": "^1.11.1",
+    "prettier": "^1.12.1",
     "rimraf": "^2.6.2",
-    "rollup": "^0.57.1",
+    "rollup": "^0.58.0",
     "rollup-plugin-babel": "^3.0.3",
     "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-replace": "^2.0.0",
     "rollup-plugin-uglify": "^3.0.0",
-    "rxjs": "^5.5.8",
+    "rxjs": "^5.5.10",
     "typescript": "^2.8.1",
     "typings-tester": "^0.3.1"
   },

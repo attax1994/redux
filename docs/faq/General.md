@@ -31,7 +31,7 @@ What to learn can be an overwhelming question for a JavaScript developer. It hel
 - [Twitter: Learning Redux before React?](https://twitter.com/dan_abramov/status/739962098030137344)
 - [Twitter: The first time I used React, people told me I needed Redux...](https://twitter.com/raquelxmoss/status/901576285020856320)
 - [Twitter: This was my experience with Redux...](https://twitter.com/garetmckinley/status/901500556568645634)
-
+- [Dev.to: When is it time to use Redux?](https://dev.to/dan_abramov/comment/1n2k)
 
 <a id="general-when-to-use"></a>
 ### When should I use Redux?
@@ -90,7 +90,7 @@ Redux can be used as a data store for any UI layer. The most common usage is wit
 <a id="general-build-tools"></a>
 ### Do I need to have a particular build tool to use Redux?
 
-Redux is originally written in ES6 and transpiled for production into ES5 with Webpack and Babel. You should be able to use it regardless of your JavaScript build process. Redux also offers a UMD build that can be used directly without any build process at all. The [counter-vanilla](https://github.com/reactjs/redux/tree/master/examples/counter-vanilla) example demonstrates basic ES5 usage with Redux included as a `<script>` tag. As the relevant pull request says:
+Redux is originally written in ES6 and transpiled for production into ES5 with Webpack and Babel. You should be able to use it regardless of your JavaScript build process. Redux also offers a UMD build that can be used directly without any build process at all. The [counter-vanilla](https://github.com/reduxjs/redux/tree/master/examples/counter-vanilla) example demonstrates basic ES5 usage with Redux included as a `<script>` tag. As the relevant pull request says:
 
 > The new Counter Vanilla example is aimed to dispel the myth that Redux requires Webpack, React, hot reloading, sagas, action creators, constants, Babel, npm, CSS modules, decorators, fluent Latin, an Egghead subscription, a PhD, or an Exceeds Expectations O.W.L. level.
 

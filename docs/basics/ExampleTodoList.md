@@ -1,6 +1,6 @@
 # Example: Todo List
 
-This is the complete source code of the tiny todo app we built during the [basics tutorial](./README.md). This code is also in [our repository of examples](https://github.com/reactjs/redux/tree/master/examples/todos/src) and can be [run in your browser via CodeSandbox](https://codesandbox.io/s/github/reactjs/redux/tree/master/examples/todos).
+This is the complete source code of the tiny todo app we built during the [basics tutorial](./README.md). This code is also in [our repository of examples](https://github.com/reduxjs/redux/tree/master/examples/todos/src) and can be [run in your browser via CodeSandbox](https://codesandbox.io/s/github/reduxjs/redux/tree/master/examples/todos).
 
 ## Entry Point
 
@@ -86,7 +86,9 @@ export default todos
 #### `reducers/visibilityFilter.js`
 
 ```js
-const visibilityFilter = (state = 'SHOW_ALL', action) => {
+import { VisibilityFilters } from '../actions'
+
+const visibilityFilter = (state = VisibilityFilters.SHOW_ALL, action) => {
   switch (action.type) {
     case 'SET_VISIBILITY_FILTER':
       return action.filter
@@ -250,16 +252,18 @@ export default App
 import { connect } from 'react-redux'
 import { toggleTodo } from '../actions'
 import TodoList from '../components/TodoList'
+import { VisibilityFilters } from '../actions'
 
 const getVisibleTodos = (todos, filter) => {
   switch (filter) {
-    case 'SHOW_COMPLETED':
-      return todos.filter(t => t.completed)
-    case 'SHOW_ACTIVE':
-      return todos.filter(t => !t.completed)
-    case 'SHOW_ALL':
-    default:
+    case VisibilityFilters.SHOW_ALL:
       return todos
+    case VisibilityFilters.SHOW_COMPLETED:
+      return todos.filter(t => t.completed)
+    case VisibilityFilters.SHOW_ACTIVE:
+      return todos.filter(t => !t.completed)
+    default:
+      throw new Error('Unknown filter: ' + filter)
   }
 }
 
