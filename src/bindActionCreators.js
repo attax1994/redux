@@ -1,3 +1,9 @@
+/**
+ * 对单个actionCreator的dispatch封装
+ * @param actionCreator
+ * @param dispatch
+ * @return {function(): *}
+ */
 function bindActionCreator(actionCreator, dispatch) {
   return function() {
     return dispatch(actionCreator.apply(this, arguments))
@@ -25,6 +31,13 @@ function bindActionCreator(actionCreator, dispatch) {
  * function as `actionCreators`, the return value will also be a single
  * function.
  */
+/**
+ * 对一个对象上的每个actionCreator进行封装，使得其在调用时可以一并生成action和传入dispatch
+ * 这个行为等同于一步完成`store.dispatch(MyActionCreators.doSomething())`的方案，是一个更方便的封装形式
+ * @param actionCreators
+ * @param dispatch
+ * @return {*}
+ */
 export default function bindActionCreators(actionCreators, dispatch) {
   if (typeof actionCreators === 'function') {
     return bindActionCreator(actionCreators, dispatch)
@@ -41,6 +54,9 @@ export default function bindActionCreators(actionCreators, dispatch) {
 
   const keys = Object.keys(actionCreators)
   const boundActionCreators = {}
+  /**
+   * 遍历处理每个actionCreator
+   */
   for (let i = 0; i < keys.length; i++) {
     const key = keys[i]
     const actionCreator = actionCreators[key]
