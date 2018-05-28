@@ -48,8 +48,8 @@ export default function createStore(reducer, preloadedState, enhancer) {
   }
 
   /**
-   * 如果存在enhancer，将createStore传给enhancer这个闭包，对其进行绑架，从而实现middleware的行为
-   * 然后再传入reducer和preloadedState，完成构建
+   * 如果存在enhancer，将createStore和reducer, preloadedState传入，
+   * 先构建store，然后改造其dispatch方法，从而在每次dispatch时能被middleware拦截
    */
   if (typeof enhancer !== 'undefined') {
     if (typeof enhancer !== 'function') {
