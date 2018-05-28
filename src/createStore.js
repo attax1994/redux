@@ -70,6 +70,7 @@ export default function createStore(reducer, preloadedState, enhancer) {
   let currentState = preloadedState
   // 记录申请subscribe的目标
   let currentListeners = []
+  // 暂存修改后的listener列表，在dispatch时替换currentListeners
   let nextListeners = currentListeners
   // 标志是否正在执行一个action
   let isDispatching = false
